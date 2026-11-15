@@ -48,7 +48,7 @@ $("waitlist-form").addEventListener("submit", (e) => {
   e.preventDefault();
   const email = $("wl-email").value.trim();
   const to = $("contact-email").textContent.trim();
-  window.location.href = `mailto:${to}?subject=${encodeURIComponent("ShipGST India waitlist")}&body=${encodeURIComponent("Please add me to the waitlist: " + email)}`;
+  window.location.href = `mailto:${to}?subject=${encodeURIComponent("BharatShip GST waitlist")}&body=${encodeURIComponent("Please add me to the waitlist: " + email)}`;
   $("wl-msg").textContent = "Thanks! Your email app should open to confirm your spot.";
 });
 

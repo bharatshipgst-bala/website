@@ -1,6 +1,6 @@
-# ShipGST India — Product Website
+# BharatShip GST — Product Website
 
-A static, single-page product & documentation site for the ShipGST India Shopify app (Delhivery / Blue Dart courier automation + GST invoices).
+A static, single-page product & documentation site for the BharatShip GST Shopify app (Delhivery / Blue Dart courier automation + GST invoices).
 
 ## Files
 - `index.html` — landing page (hero, features, GST engine + calculator, workflow, architecture, courier integrations, waitlist, contact)
@@ -17,4 +17,3 @@ Just open `index.html` in a browser. No build step.
 
 ## To customise
 - Replace `support@example.com` in `index.html` and `privacy.html` with your real contact email.
-- Rename "ShipGST India" if you choose a different app name.
