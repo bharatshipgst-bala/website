@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShipGST India — Shipping & GST Invoices for Shopify</title>
+  <meta name="description" content="Automated Delhivery, Blue Dart and GST-compliant invoices for Indian Shopify merchants.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#" class="brand"><span class="logo">S</span> ShipGST India</a>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#gst">GST Engine</a>
+        <a href="#how">How it works</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="pill">Coming soon to the Shopify App Store</span>
+        <h1>Automated Delhivery, Blue Dart &amp; GST Invoices for Shopify</h1>
+        <p class="lead">Book domestic couriers and generate GST-compliant tax invoices automatically the moment an order is created — built for Indian Shopify merchants.</p>
+        <div class="cta">
+          <a href="#waitlist" class="btn primary">Join the Waitlist</a>
+          <a href="#how" class="btn ghost">See how it works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <div class="wrap">
+        <h2>Everything you need to ship and bill in India</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>CGST / SGST / IGST automation</h3>
+            <p>Tax is split automatically based on your warehouse state and the customer's shipping state.</p>
+          </article>
+          <article class="card">
+            <h3>PDF tax invoices</h3>
+            <p>Downloadable invoices with GSTIN, HSN codes, taxable value, tax breakup and digital signature.</p>
+          </article>
+          <article class="card">
+            <h3>1-click AWB &amp; labels</h3>
+            <p>Book a shipment, get an Air Waybill (AWB) number and print the shipping label in one click.</p>
+          </article>
+          <article class="card">
+            <h3>Pincode &amp; rate check</h3>
+            <p>Instantly see whether Delhivery or Blue Dart serves the buyer's pincode, and at what rate.</p>
+          </article>
+          <article class="card">
+            <h3>Tracking sync</h3>
+            <p>AWB tracking links are pushed back to Shopify so customers get automatic email/SMS updates.</p>
+          </article>
+          <article class="card">
+            <h3>Native Shopify look</h3>
+            <p>Built with Shopify Polaris so the dashboard feels at home inside your Shopify Admin.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GST Engine -->
+    <section id="gst" class="section alt">
+      <div class="wrap two-col">
+        <div>
+          <h2>GST rules supported</h2>
+          <p>We compare your warehouse state with the customer's shipping state:</p>
+          <table class="rules">
+            <thead><tr><th>Shipment</th><th>Tax applied</th></tr></thead>
+            <tbody>
+              <tr><td>Intra-state (same state)</td><td>CGST + SGST, split equally</td></tr>
+              <tr><td>Inter-state (different state)</td><td>IGST (full rate)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <form class="calc card" id="calc" onsubmit="return false">
+          <h3>Try it: GST split calculator</h3>
+          <label>Taxable value (₹)<input type="number" id="amt" value="1000" min="0" step="0.01"></label>
+          <label>GST rate
+            <select id="rate">
+              <option value="5">5%</option><option value="12">12%</option>
+              <option value="18" selected>18%</option><option value="28">28%</option>
+            </select>
+          </label>
+          <label>Warehouse state<select id="from"></select></label>
+          <label>Customer state<select id="to"></select></label>
+          <div class="result" id="result" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="section">
+      <div class="wrap">
+        <h2>How it works</h2>
+        <ol class="flow">
+          <li><strong>Install</strong><span>Merchant installs the app via Shopify OAuth.</span></li>
+          <li><strong>Set up</strong><span>Enter GSTIN, business address, pickup pincode and Delhivery / Blue Dart API keys.</span></li>
+          <li><strong>Order created</strong><span>The app receives the order from the Shopify Admin API.</span></li>
+          <li><strong>Invoice</strong><span>GST engine calculates CGST/SGST or IGST and generates a PDF invoice.</span></li>
+          <li><strong>Ship</strong><span>Check pincode serviceability, book the courier, generate AWB &amp; label.</span></li>
+          <li><strong>Track</strong><span>Tracking number is synced to Shopify and the order is fulfilled.</span></li>
+        </ol>
+
+        <h3 class="sub">System architecture</h3>
+        <div class="arch">
+          <div class="box"><b>Merchant Dashboard</b><small>React.js + Shopify Polaris</small></div>
+          <div class="arrow">→</div>
+          <div class="box"><b>Backend API</b><small>Node.js (Express) / Python (FastAPI)</small></div>
+          <div class="arrow">→</div>
+          <div class="stack">
+            <div class="box"><b>Database</b><small>PostgreSQL / MongoDB — tokens, GSTIN, HSN, tracking IDs</small></div>
+            <div class="box"><b>Shopify Admin API</b><small>Orders, fulfillment, tracking numbers</small></div>
+            <div class="box"><b>Courier APIs</b><small>Delhivery &amp; Blue Dart — serviceability, rates, AWB, labels</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Couriers -->
+    <section class="section alt">
+      <div class="wrap center">
+        <h2>Courier integrations</h2>
+        <div class="couriers">
+          <div class="card"><h3>Delhivery</h3><p>Serviceability · Rates · AWB · Labels</p></div>
+          <div class="card"><h3>Blue Dart</h3><p>Serviceability · Rates · AWB · Labels</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Waitlist + Contact -->
+    <section id="waitlist" class="section">
+      <div class="wrap center">
+        <h2>Join the waitlist</h2>
+        <p>Be the first to know when ShipGST India launches on the Shopify App Store.</p>
+        <form class="waitlist" id="waitlist-form">
+          <input type="email" id="wl-email" placeholder="you@yourstore.com" required>
+          <button class="btn primary" type="submit">Notify me</button>
+        </form>
+        <p class="note" id="wl-msg"></p>
+      </div>
+    </section>
+
+    <section id="contact" class="section alt">
+      <div class="wrap center">
+        <h2>Contact</h2>
+        <p>Questions, partnerships or early access: <a href="mailto:support@example.com" id="contact-email">support@example.com</a></p>
+        <p><a href="privacy.html">Privacy Policy</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">© <span id="yr"></span> ShipGST India · <a href="privacy.html">Privacy Policy</a></div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
